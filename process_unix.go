@@ -88,7 +88,9 @@ func processes() ([]Process, error) {
 				continue
 			}
 
-			results = append(results, p)
+			if string(p.state) != "Z" {
+				results = append(results, p)
+			}
 		}
 	}
 
